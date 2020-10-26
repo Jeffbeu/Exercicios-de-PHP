@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade 02</title>
+    <script>
+        function calcular() {
+            var calc = parseFloat(document.getElementById('prova01').value);
+            var calc1 = parseFloat(document.getElementById('prova02').value);
+
+            var med = (calc + calc1) / 2
+            var sit = '';
+            if (med >= 7) {
+                sit = "Aprovado";
+            } if (med < 7 && med >= 5) {
+                sit = "Reprovado"
+            }
+            if (med < 5) {
+                sit = "Reprovado";
+            }
+        
+        document.getElementById('media').value = med;
+        document.getElementById('situacao').value = sit;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Aluno</h1>
+    <form action="avl04.php" method="GET">
+        <label>Nome:</label>
+        <input type="text" name="nomealuno" /><br><br>
+        <label>Matricula</label>
+        <input type="number" name="matri" /><br><br>
+        <label>Prova 01</label>
+        <input type="text" name="prova01" id="prova01" /><br><br>
+        <label>Prova02</label>
+        <input type="text" name="prova02" id="prova02" /><br><br>
+        <label>Média</label>
+        <input type="text" name="media" id="media" readonly /><br><br>
+        <label>Situação</label>
+        <input type="text" name="situacao" id="situacao" readonly /><br><br>
+        <input type="button" value="calcular" onclick="calcular()" />
+        <input type="submit" value="Cadastrar o Aluno" />
+    </form>
+</body>
+
+</html>
